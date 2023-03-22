@@ -38,19 +38,19 @@
             <div class="collapse navbar-collapse font-1" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="Home.html">Home</a>
+                        <a class="nav-link" href="Home.php">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#">Register</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="Login.html">Login</a>
+                        <a class="nav-link" href="Login.php">Login</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#contact_us">Contact us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="Home.html">About us</a>
+                        <a class="nav-link" href="Home.php">About us</a>
                     </li>
                 </ul>
             </div>
@@ -74,33 +74,34 @@
 
                 <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
 
-                <form class="mx-1 mx-md-4">
+
+                <form class="mx-1 mx-md-4" action="connect.php" method="post">
 
                   <div class="d-flex flex-row align-items-center mb-4">
                     <div class="form-outline flex-fill mb-0">
-                      <input type="text" id="form3Example1c" class="form-control" />
-                      <label class="form-label" for="form3Example1c">Your Name</label>
+                      <input type="text" class="form-control" id="name" name="name"/>
+                      <label class="form-label" for="name">Your Name</label>
                     </div>
                   </div>
 
                   <div class="d-flex flex-row align-items-center mb-4">
                     <div class="form-outline flex-fill mb-0">
-                      <input type="email" id="form3Example3c" class="form-control" />
-                      <label class="form-label" for="form3Example3c">Your Email</label>
+                      <input type="email" class="form-control" id="email" name="email"/>
+                      <label class="form-label" for="email">Your Email</label>
                     </div>
                   </div>
 
                   <div class="d-flex flex-row align-items-center mb-4">
                     <div class="form-outline flex-fill mb-0">
-                      <input type="password" id="form3Example4c" class="form-control" />
-                      <label class="form-label" for="form3Example4c">Password</label>
+                      <input type="password" class="form-control" id="password" name="password"/>
+                      <label class="form-label" for="password">Password</label>
                     </div>
                   </div>
 
                   <div class="d-flex flex-row align-items-center mb-4">
                     <div class="form-outline flex-fill mb-0">
-                      <input type="password" id="form3Example4cd" class="form-control" />
-                      <label class="form-label" for="form3Example4cd">Repeat your password</label>
+                      <input type="password" class="form-control" id="cpassword" name="cpassword"/>
+                      <label class="form-label" for="cpassword">Repeat your password</label>
                     </div>
                   </div>
 
@@ -117,7 +118,7 @@
                   </div>
 
                   <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                    <button type="button" class="btn btn-primary btn-lg"><a href="Login.html" style="text-decoration: none; color: white;">Register</a></button>
+                    <button type="submit" name="submit" class="btn btn-primary btn-lg"><a href="Login.php.php" style="text-decoration: none; color: white;">Register</a></button>
                   </div>
 
                 </form>

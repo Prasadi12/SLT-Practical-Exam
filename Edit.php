@@ -1,3 +1,75 @@
+<?php
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$database = "bankdb";
+
+$conn = new mysqli($servername, $username, $password, $database);
+
+$id = "";
+$bname="";
+$branch="";
+$bcode="";
+$anumber="";
+
+$errorMessage = "";
+$successMessage ="";
+
+if($_SERVER['REQUEST_METHOD'] == 'GET'){
+    if(!isset($_GET["id"])){
+        header("location: View.php");
+        exit;
+    }
+    $id = $_GET["id"];
+
+    $sql = "select * from banks where id=$id";
+    $result = $conn -> query($sql);
+    $row = $result -> fetch_assoc();
+
+    if(!$row){
+        header("location: View.php");
+        exit;
+    }
+
+    $bname = $row["bname"];
+    $branch = $row["branch"];
+    $bcode = $row["bcode"];
+    $anumber = $row["anumber"];
+}else{
+
+    $id = $_POST['id'];
+    $bname = $_POST['bname'];
+    $branch = $_POST['branch'];
+    $bcode = $_POST['bcode'];
+    $anumber = $_POST['anumber'];
+
+    do{
+        if(empty($id) || empty($bname) || empty($branch) || empty($bcode) || empty($anumber)){
+            $errorMessage = "All the fields are required";
+            break;
+        }
+
+        $sql = "Update Bank details " .
+        "SET bname = '$bname', branch = '$branch', bcode = '$bcode', anumber = '$anumber' " .
+        "where id = $id";
+
+        $result = $conn -> query($sql);
+
+        if(!$result){
+        $errorMessage = "Invalied query: " .$conn -> error;
+        break;
+    }
+
+    $successMessage = "Bank Details Updated..!";
+
+    header("location: View.php");
+
+    }while (true);
+}
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,19 +110,19 @@
             <div class="collapse navbar-collapse font-1" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="Home.html">Home</a>
+                        <a class="nav-link" href="Home.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="Registration.html">Register</a>
+                        <a class="nav-link" href="Registration.php">Register</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="Login.html">Logout</a>
+                        <a class="nav-link active" href="Home.php">Logout</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#contact_us">Contact us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="Home.html">About us</a>
+                        <a class="nav-link" href="Home.php">About us</a>
                     </li>
                 </ul>
             </div>
@@ -70,23 +142,24 @@
                     <img src="https://mdbootstrap.com/img/Photos/new-templates/bootstrap-login-form/draw2.png" class="img-fluid" alt="Phone image">
                 </div>
             <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
-            <form>
+            <form method="post">
+                <input type="hidden" value="<?php echo $id;?>">
 
             <div class="form-outline mb-1">
-                <label class="form-label" for="form1Example14">Bank name</label>
-                <input type="name" id="form1Example14" class="form-control form-control-lg" />
+                <label class="form-label" for="bname">Bank name</label>
+                <input type="text" id="bname" name="bname" class="form-control form-control-lg" />
             </div>
             <div class="form-outline mb-1">
-                <label class="form-label" for="form1Example15">Branch</label>
-                <input type="address" id="form1Example15" class="form-control form-control-lg" />
+                <label class="form-label" for="branch">Branch</label>
+                <input type="text" id="branch" name="branch" class="form-control form-control-lg" />
             </div>
             <div class="form-outline mb-1">
-                <label class="form-label" for="form1Example16">Branch Code</label>
-                <input type="contactnum" id="form1Example16" class="form-control form-control-lg" />
+                <label class="form-label" for="bcode">Branch Code</label>
+                <input type="text" id="bcode" name="bcode" class="form-control form-control-lg" />
             </div>
             <div class="form-outline mb-1">
-                <label class="form-label" for="form1Example17">Account Number</label>
-                <input type="serialnum" id="form1Example17" class="form-control form-control-lg" />
+                <label class="form-label" for="anumber">Account Number</label>
+                <input type="text" id="anumber" name="anumber" class="form-control form-control-lg" />
             </div>
             
             <!-- Submit button -->

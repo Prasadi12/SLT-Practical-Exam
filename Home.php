@@ -41,10 +41,10 @@
           				<a class="nav-link active" aria-current="page" href="#">Home</a>
         			</li>
         			<li class="nav-item">
-          				<a class="nav-link" href="Registration.html">Register</a>
+          				<a class="nav-link" href="Registration.php">Register</a>
         			</li>
         			<li class="nav-item">
-          				<a class="nav-link" href="login.html">Login</a>
+          				<a class="nav-link" href="login.php">Login</a>
         			</li>
         			<li class="nav-item">
           				<a class="nav-link" href="#contact_us">Contact us</a>
@@ -120,7 +120,7 @@
         					<p>
           						CREATE AN ACCOUNT FROM HERE...!!
         					</p>
-        					<a href="Registration.html" class="btn btn-outline-info px-4 mx-5">Registration</a>
+        					<a href="Registration.php" class="btn btn-outline-info px-4 mx-5">Registration</a>
       					</div>
 		<!-- Right end-->
 					</div>

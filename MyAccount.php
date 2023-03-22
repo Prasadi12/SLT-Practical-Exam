@@ -40,19 +40,19 @@
             <div class="collapse navbar-collapse font-1" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="Home.html">Home</a>
+                        <a class="nav-link" href="Home.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="Registration.html">Register</a>
+                        <a class="nav-link" href="Registration.php">Register</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="Login.html">Logout</a>
+                        <a class="nav-link active" href="Home.php">Logout</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#contact_us">Contact us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="Home.html">About us</a>
+                        <a class="nav-link" href="Home.php">About us</a>
                     </li>
                 </ul>
             </div>
@@ -67,9 +67,8 @@
     <center>
       <h1 class="font-2 clf-1 text-center font-2 text-warning bg-dark w-50">ACCOUNT DETAILS</h1>
         <div class="d-grid gap-3 w-25">
-          <a href="Add.html" class="btn btn-light b-1" role="button">ADD ACCOUNTS</a>
-          <a href="View.html" class="btn btn-light b-1" role="button">MY ACCOUNTS</a>
-          <a href="Edit.html" class="btn btn-light b-1" role="button">EDIT ACCOUNTS</a>
+          <a href="Add.php" class="btn btn-light b-1" role="button">ADD ACCOUNTS</a>
+          <a href="View.php" class="btn btn-light b-1" role="button">MY ACCOUNTS</a>
           <a href="#" class="btn btn-light b-1" role="button">MY PROFILE</a>
           <a href="#" class="btn btn-light b-1" role="button">HELP & SUPPORT</a>
           <a href="#" class="btn btn-light b-1" role="button">OTHER</a>

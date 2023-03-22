@@ -39,19 +39,19 @@
             <div class="collapse navbar-collapse font-1" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="Home.html">Home</a>
+                        <a class="nav-link" href="Home.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="Registration.html">Register</a>
+                        <a class="nav-link" href="Registration.php">Register</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="login.html">Login</a>
+                        <a class="nav-link active" aria-current="page" href="login.php">Login</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#contact_us">Contact us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="Home.html">About us</a>
+                        <a class="nav-link" href="Home.php">About us</a>
                     </li>
                 </ul>
             </div>
@@ -71,18 +71,18 @@
                     <img src="https://mdbootstrap.com/img/Photos/new-templates/bootstrap-login-form/draw2.svg" class="img-fluid" alt="Phone image">
                 </div>
             <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
-            <form>
+            <form action="connect1.php" method="post">
             <!-- Email input -->
             <div class="form-outline mb-4">
-                <input type="email" id="form1Example13" class="form-control form-control-lg" />
-                <label class="form-label" for="form1Example13">Email address</label>
+                <input type="email" id="email" name="email" class="form-control form-control-lg" />
+                <label class="form-label" for="email">Email address</label>
             </div>
           <!-- Email input end-->
 
           <!-- Password input -->
             <div class="form-outline mb-4">
-                <input type="password" id="form1Example23" class="form-control form-control-lg" />
-                <label class="form-label" for="form1Example23">Password</label>
+                <input type="password" id="password" name="password" class="form-control form-control-lg" />
+                <label class="form-label" for="password">Password</label>
             </div>
           <!-- Password input end-->
 
@@ -98,7 +98,7 @@
 
             <!-- Submit button -->
             <center>
-                <button type="submit" class="btn btn-primary btn-lg btn-block"><a href="MyAccount.html" style="text-decoration: none; color: white;">Sign in</a></button>
+                <button type="submit" class="btn btn-primary btn-lg btn-block"><a href="MyAccount.php" style="text-decoration: none; color: white;">Sign in</a></button>
             </center>
             <!-- Submit button end-->
         
