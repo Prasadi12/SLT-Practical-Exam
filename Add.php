@@ -76,19 +76,19 @@
             
             <div class="form-outline mb-1">
                 <label class="form-label" for="bname">Bank name</label>
-                <input type="text" id="bname" name="bname" class="form-control form-control-lg" />
+                <input type="text" id="bname" name="bname" required class="form-control form-control-lg" />
             </div>
             <div class="form-outline mb-1">
                 <label class="form-label" for="branch">Branch</label>
-                <input type="text" id="branch" name="branch" class="form-control form-control-lg" />
+                <input type="text" id="branch" name="branch" required class="form-control form-control-lg" />
             </div>
             <div class="form-outline mb-1">
                 <label class="form-label" for="bcode">Branch Code</label>
-                <input type="text" id="bcode" name="bcode" class="form-control form-control-lg" />
+                <input type="text" id="bcode" name="bcode" required class="form-control form-control-lg" />
             </div>
             <div class="form-outline mb-1">
                 <label class="form-label" for="anumber">Account Number</label>
-                <input type="text" id="anumber" name="anumber" class="form-control form-control-lg" />
+                <input type="text" id="anumber" name="anumber" required class="form-control form-control-lg" />
             </div>
             
             <!-- Submit button -->

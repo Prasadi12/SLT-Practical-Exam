@@ -14,12 +14,14 @@
 		if($stmt_result -> num_rows > 0){
 			$data = $stmt_result -> fetch_assoc();
 			if($data['password'] === $password){
-				echo "<h2>Login successfully...!</h2>";
+				echo "<script>alert('Login successfully...!');</script>";
+				header("location: View.php");
 			}else{
-				echo "<h2>Invalied Email or Password.</h2>";
+				echo "<script>alerts('Invalied Email or Password');</script>";
+				
 			}
 		}else{
-			echo "<h2>Invalied Email or Password.</h2>";
+			echo "<script>alerts('Invalied Email or Password');</script>";
 		}
 	}
 ?>

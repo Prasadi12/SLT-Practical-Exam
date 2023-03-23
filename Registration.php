@@ -79,28 +79,28 @@
 
                   <div class="d-flex flex-row align-items-center mb-4">
                     <div class="form-outline flex-fill mb-0">
-                      <input type="text" class="form-control" id="name" name="name"/>
+                      <input type="text" class="form-control" id="name" name="name" required />
                       <label class="form-label" for="name">Your Name</label>
                     </div>
                   </div>
 
                   <div class="d-flex flex-row align-items-center mb-4">
                     <div class="form-outline flex-fill mb-0">
-                      <input type="email" class="form-control" id="email" name="email"/>
+                      <input type="email" class="form-control" id="email" name="email" required />
                       <label class="form-label" for="email">Your Email</label>
                     </div>
                   </div>
 
                   <div class="d-flex flex-row align-items-center mb-4">
                     <div class="form-outline flex-fill mb-0">
-                      <input type="password" class="form-control" id="password" name="password"/>
+                      <input type="password" class="form-control" id="password" name="password" required />
                       <label class="form-label" for="password">Password</label>
                     </div>
                   </div>
 
                   <div class="d-flex flex-row align-items-center mb-4">
                     <div class="form-outline flex-fill mb-0">
-                      <input type="password" class="form-control" id="cpassword" name="cpassword"/>
+                      <input type="password" class="form-control" id="cpassword" name="cpassword" required />
                       <label class="form-label" for="cpassword">Repeat your password</label>
                     </div>
                   </div>

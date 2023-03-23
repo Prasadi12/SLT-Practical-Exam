@@ -74,14 +74,14 @@
             <form action="connect1.php" method="post">
             <!-- Email input -->
             <div class="form-outline mb-4">
-                <input type="email" id="email" name="email" class="form-control form-control-lg" />
+                <input type="email" id="email" name="email" required class="form-control form-control-lg" />
                 <label class="form-label" for="email">Email address</label>
             </div>
           <!-- Email input end-->
 
           <!-- Password input -->
             <div class="form-outline mb-4">
-                <input type="password" id="password" name="password" class="form-control form-control-lg" />
+                <input type="password" id="password" name="password" required class="form-control form-control-lg" />
                 <label class="form-label" for="password">Password</label>
             </div>
           <!-- Password input end-->
@@ -98,12 +98,24 @@
 
             <!-- Submit button -->
             <center>
-                <button type="submit" class="btn btn-primary btn-lg btn-block"><a href="MyAccount.php" style="text-decoration: none; color: white;">Sign in</a></button>
+                <button type="submit" class="btn btn-primary btn-lg btn-block">Sign in</button>
             </center>
             <!-- Submit button end-->
         
             </form>
             </div>
+            <!-- <script>
+                function auth(){
+                    var email = document.getElementById("email").value;
+                    var password = document.getElementById("password").value;
+                    if(email == "" && password == ""){
+                        window.location.assign("MyAccount.php");
+                        alert("Login successfully...!");
+                    }else{
+                        alert("Invalied login...!");
+                    }
+                }
+            </script> -->
             </div>
         </div>
     </section>
