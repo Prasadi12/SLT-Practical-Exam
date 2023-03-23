@@ -12,29 +12,65 @@ if(!$conn){
 
 }
 
-$id = $_GET['id'];
+$id = "";
+$bname="";
+$branch="";
+$bcode="";
+$anumber="";
 
-if(isset($_POST['submit'])){
+$errorMessage = "";
+$successMessage ="";
+
+if($_SERVER['REQUEST_METHOD'] == 'GET'){
+    if(!isset($_GET["id"])){
+        header("location: View.php");
+        exit;
+    }
+    $id = $_GET["id"];
+
+    $sql = "select * from banks where id='$id' ";
+    $result = $conn -> query($sql);
+    $row = $result -> fetch_assoc();
+
+    if(!$row){
+        header("location: View.php");
+        exit;
+    }
+
+    $bname = $row["bname"];
+    $branch = $row["branch"];
+    $bcode = $row["bcode"];
+    $anumber = $row["anumber"];
+}else{
+
     $id = $_POST['id'];
     $bname = $_POST['bname'];
     $branch = $_POST['branch'];
     $bcode = $_POST['bcode'];
     $anumber = $_POST['anumber'];
 
-    $sql = "UPDATE banks SET bname='$bname',branch='$branch',bcode='$bcode',anumber='$anumber' WHERE id='$id'";
-    
-    $result = mysqli_query($conn, $sql);
-    // echo ($result)
+    do{
+        if(empty($id) || empty($bname) || empty($branch) || empty($bcode) || empty($anumber)){
+            $errorMessage = "All the fields are required";
+            break;
+        }
 
-    if($result){
-        header("Location: View.php?msg= data updated succefully");
+         $sql = "UPDATE banks SET bname='$bname',branch='$branch',bcode='$bcode',anumber='$anumber' WHERE id='$id'";
+
+        $result = $conn -> query($sql);
+
+        if(!$result){
+        $errorMessage = "Invalied query: " .$conn -> error;
+        break;
     }
-    else{
-        echo "Failed: " . mysqli_error($conn);
-    }
+
+    $successMessage = "Bank Details Updated..!";
+
+    header("location: View.php");
+
+    }while (true);
 }
 ?>
-
 
 <!DOCTYPE html>
 <html>
@@ -107,18 +143,10 @@ if(isset($_POST['submit'])){
                 <div class="col-md-8 col-lg-7 col-xl-6">
                     <img src="https://mdbootstrap.com/img/Photos/new-templates/bootstrap-login-form/draw2.png" class="img-fluid" alt="Phone image">
                 </div>
-                <?php
-            $sql = "SELECT * FROM banks WHERE id = '$id' LIMIT 1";
-            $result = mysqli_query($conn, $sql);
-            if($result === false){
-                echo "Failed: " . mysqli_error($conn);
-            } else {
-                $row = mysqli_fetch_assoc($result);
-            }
-            ?>
-            <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
-            <form method="post">
                 
+            <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+            <form action="" method="post">
+             <input type="hidden" name="id" value="<?php echo $id; ?>">   
 
             <div class="form-outline mb-1">
                 <label class="form-label" for="bname">Bank name</label>
@@ -140,7 +168,6 @@ if(isset($_POST['submit'])){
             <!-- Submit button -->
             <center>
                 <button type="submit" name="submit" class="btn btn-primary btn-lg btn-block">UPDATE</button>
-                <a href="View.php" class="btn btn-danger">Cansel</a>
             </center>
             <!-- Submit button end-->
         
